@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Poppins&display=swap");
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #242831;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+nav {
+  position: absolute;
+  background-color: #292e38;
+  width: 100vw;
+  height: 5em;
+  left: 0;
+  top: 0;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 1.5em 5em 0 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */
