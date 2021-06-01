@@ -31,4 +31,55 @@ nav a {
   text-decoration: none;
   color: white;
 }
+
+.calculator-container {
+  position: relative;
+  margin: 0 auto 0 auto;
+  background-color: #122e44;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 5%;
+}
+
+.calculator-container .calculator {
+  top: 10%;
+  display: block;
+  position: relative;
+  margin: 0 auto 1em auto;
+  width: 30vw;
+  padding: 1em;
+  background-color: purple;
+  border-radius: 10%;
+}
+
+.calculator-container .display {
+  margin: 1em auto 1em auto;
+  width: 23vw;
+  height: 9vw;
+  background-color: green;
+  border-radius: 5%;
+}
+
+.calculator-container .btn-pad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (6vw)[4];
+      grid-template-columns: repeat(4, 6vw);
+  -ms-grid-rows: (6vw)[4];
+      grid-template-rows: repeat(4, 6vw);
+}
+
+.calculator-container .btn-pad .btn {
+  border-radius: 10%;
+  height: 5vw;
+  width: 5vw;
+  background-color: darkgrey;
+}
 /*# sourceMappingURL=main.css.map */
