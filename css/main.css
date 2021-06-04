@@ -3,7 +3,7 @@
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -18,8 +18,8 @@ nav {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100vw;
   height: 5em;
   left: 0;
@@ -55,18 +55,18 @@ nav #rluo {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   top: 10%;
 }
 
 .calculator-container .btn-pad {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (6vw)[4];
-      grid-template-rows: repeat(4, 6vw);
-  -ms-grid-columns: (6vw)[4];
-      grid-template-columns: repeat(4, 6vw);
+  -ms-grid-rows: (6vw) [4];
+  grid-template-rows: repeat(4, 6vw);
+  -ms-grid-columns: (6vw) [4];
+  grid-template-columns: repeat(4, 6vw);
   grid-gap: 1em 1em;
   justify-items: center;
   background-color: red;
@@ -87,8 +87,8 @@ nav #rluo {
   display: grid;
   justify-items: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: black;
 }
 
@@ -99,8 +99,8 @@ nav #rluo {
   width: 90%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (10px)[20];
-      grid-template-columns: repeat(20, 10px);
+  -ms-grid-columns: (10px) [20];
+  grid-template-columns: repeat(20, 10px);
   justify-items: start;
 }
 
