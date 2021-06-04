@@ -78,15 +78,28 @@ nav {
     background-color: red;
     padding: 1em;
 
+    .btn {
+      cursor: pointer;
+    }
+
     .elem {
       height: 5vw;
       width: 5vw;
-      background-color: darkgrey;
+      background-color: white;
+      font-family: $font1;
+      font-size: 2vw;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      color: black;
     }
 
     #display {
       grid-column: 1/5;
       width: 90%;
+      display: grid;
+      grid-template-columns: repeat(20, 10px);
+      justify-items: start;
     }
 
     #clear {

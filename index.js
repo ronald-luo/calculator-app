@@ -9,31 +9,79 @@ let num2 = 0;
             let item = e.target.id
             current_operation.push(item)
             console.log(item)
+
+            display(item)
             switch (item) {
+                case "clear":
+                    window.location.reload()
+
+                    break;
+                case "delete":
+
+                    break;
                 case "add":
-                    num1 = parser()
+                    if (num1 === 0) {
+                        num1 = parser()
+                    } else {
+                        num2 = parser() 
+                        num1[1] = "add"
+                    }
+
                     break;
                 case "subtract":
-                    num1 = parser()
+                    if (num1 === 0) {
+                        num1 = parser()
+                    } else {
+                        num2 = parser() 
+                        num1[1] = "subtract"
+                    }
                     break;
                 case "multiply":
-                    num1 = parser()
+                    if (num1 === 0) {
+                        num1 = parser()
+                    } else {
+                        num2 = parser()
+                        num1[1] = "multiply"
+                    }
                     break;
                 case "divide":
-                    num1 = parser()
+                    if (num1 === 0) {
+                        num1 = parser()
+                    } else {
+                        num2 = parser()
+                        num1[1] = "divide"
+                    }
                     break;
                 case "equals":
                     num2 = parser()
-                    console.log(num1, num2, num1[1])
-                    let a = operators[num1[1]](num1, num2)
+                    // console.log(num1, num2, num1[1])
 
-                    let b = add(Number(num1[0]), Number(num2[0]))
-                    console.log(a)
+                    let op = operators[num1[1]]
+                    console.log(op(num1[0], num2[0])) // result
+
+                    num1[0] = op(num1[0], num2[0])
+                    // console.log(num1, num2, num1[1])
+
             }
             
         })
     })
 })()
+
+let operators = {
+    add: function (numA, numB) {
+        return Number(numA) + Number(numB)
+    },
+    subtract: function(numA, numB) {
+        return numA - numB
+    },
+    multiply: function multiply (numA, numB) {
+        return numA * numB
+    },
+    divide: function  (numA, numB) {
+        return numA / numB
+    },
+}
 
 function clear () {
     current_operation = []
@@ -49,20 +97,10 @@ function parser () {
     return [result, temp[temp.length - 1]]
 }
 
-let operators = {
-    add (numA, numB) {
-        return numA + numB
-    },
-
-    subtract (numA, numB) {
-        return numA - numB
-    },
-
-    multiply (numA, numB) {
-        return numA * numB
-    },
-
-    divide (numA, numB) {
-        return numA / numB
-    }
+function display (item) {
+    let container = document.getElementById('display')
+    let div = document.createElement('div')
+    div.classList.add("disp")
+    div.textContent = item
+    container.appendChild(div)
 }
