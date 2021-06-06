@@ -57,6 +57,7 @@ let num2 = 0;
                     break;
                 case "equals":
                     display("=")
+                    clearDisplay()
                     num2 = parser()
             
                     // console.log(num1, num2, num1[1])
@@ -113,4 +114,12 @@ function display (item) {
     div.classList.add("disp")
     div.textContent = item
     container.appendChild(div)
+}
+
+function clearDisplay () {
+    let container = document.getElementById('display')
+    let stuff = document.querySelectorAll('.disp')
+    stuff.forEach((node) => {
+        container.removeChild(node)
+    })
 }
