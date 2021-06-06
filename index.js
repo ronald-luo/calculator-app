@@ -9,8 +9,8 @@ let num2 = 0;
             let item = e.target.id
             current_operation.push(item)
             console.log(item)
+            
 
-            display(item)
             switch (item) {
                 case "clear":
                     window.location.reload()
@@ -26,7 +26,7 @@ let num2 = 0;
                         num2 = parser() 
                         num1[1] = "add"
                     }
-
+                    display("+")
                     break;
                 case "subtract":
                     if (num1 === 0) {
@@ -35,6 +35,7 @@ let num2 = 0;
                         num2 = parser() 
                         num1[1] = "subtract"
                     }
+                    display("-")
                     break;
                 case "multiply":
                     if (num1 === 0) {
@@ -43,6 +44,7 @@ let num2 = 0;
                         num2 = parser()
                         num1[1] = "multiply"
                     }
+                    display("*")
                     break;
                 case "divide":
                     if (num1 === 0) {
@@ -51,17 +53,25 @@ let num2 = 0;
                         num2 = parser()
                         num1[1] = "divide"
                     }
+                    display("/")
                     break;
                 case "equals":
+                    display("=")
                     num2 = parser()
+            
                     // console.log(num1, num2, num1[1])
 
                     let op = operators[num1[1]]
                     console.log(op(num1[0], num2[0])) // result
+                    display(op(num1[0], num2[0]))
 
                     num1[0] = op(num1[0], num2[0])
                     // console.log(num1, num2, num1[1])
+                    break;
+                default:
+                    display(item)
 
+                    break;
             }
             
         })
