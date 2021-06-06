@@ -7,16 +7,27 @@ let num2 = 0;
     nodeList.forEach(node => {
         node.addEventListener('click', (e) => {
             let item = e.target.id
-            current_operation.push(item)
+            if (item === 'delete') {
+                current_operation.pop(item)
+            } else {
+                current_operation.push(item)
+            }
+
             console.log(item)
             
 
             switch (item) {
                 case "clear":
                     window.location.reload()
-
                     break;
                 case "delete":
+                    deleteButton()
+
+                    let nodes = document.querySelectorAll('.disp')
+                    if (nodes.length === 0) {
+                        num1 = 0
+                        num2 = 0
+                    }
 
                     break;
                 case "add":
@@ -56,11 +67,11 @@ let num2 = 0;
                     display("/")
                     break;
                 case "equals":
-                    display("=")
+                    display("=") // u wont see this because its so fast
                     clearDisplay()
                     num2 = parser()
             
-                    // console.log(num1, num2, num1[1])
+                    console.log(num1, num2)
 
                     let op = operators[num1[1]]
                     console.log(op(num1[0], num2[0])) // result
@@ -71,7 +82,6 @@ let num2 = 0;
                     break;
                 default:
                     display(item)
-
                     break;
             }
             
@@ -122,4 +132,16 @@ function clearDisplay () {
     stuff.forEach((node) => {
         container.removeChild(node)
     })
+}
+
+function deleteButton () {
+    let container = document.getElementById('display')
+    let nodes = document.querySelectorAll('.disp')
+
+    nodes.forEach((node) => {
+        if (node === nodes[nodes.length - 1]) {
+            container.removeChild(node)
+        }
+    })
+
 }

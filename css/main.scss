@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora&family=Poppins&display=swap");
 
-$color_1: #242831;
-$color_2: #292e38;
+$color_1: #1d2027;
+$color_2: #363c49;
 $color_3: #323844;
 $color_4: #a91fb3;
 $color_5: #dc27e9;
 $padding: 4em;
 $font1: "Poppins", sans-serif;
 $font2: "Lora", serif;
-$desktop: 840px;
+$desktop: 700px;
 
 @mixin desktop {
   @media (min-width: #{$desktop}) {
@@ -23,50 +23,92 @@ $desktop: 840px;
 }
 
 body {
-  background-color: $color_1;
+  background-color: rgb(230, 230, 230);
   font-family: $font1;
   color: white;
 }
 
 nav {
   position: absolute;
-  background-color: $color_2;
+  background-color: $color_3;
   display: grid;
   justify-content: center;
+  align-content: center;
   width: 100vw;
-  height: 5em;
+  height: 12vh;
   left: 0;
   top: 0;
 
   ul li {
     list-style: none;
     display: inline-block;
-    margin: 1.5em 5vw 0 0;
+    margin: 1.5em 7vw 0 0;
   }
 
   a {
     text-decoration: none;
     color: white;
+    font-size: 3vw;
+    @include desktop {
+      font-size: 2vw;
+    }
   }
 
   #rluo {
-    font-size: 30px;
+    font-size: 4.854vw;
+    @include desktop {
+      font-size: 3.236vw;
+    }
+  }
+}
+
+header {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  height: 5em;
+  width: 100vw;
+  h1 {
+    font-size: 6.472vw;
+    position: relative;
+    text-align: center;
+    color: black;
+    @include desktop {
+      font-size: 3.236vw;
+    }
+  }
+  h2 {
+    text-align: center;
+    font-size: 4vw;
+    font-family: $font2;
+    color: rgb(49, 49, 49);
+    @include desktop {
+      font-size: 2vw;
+    }
   }
 }
 
 .calculator-container {
   position: relative;
-  margin: 0 auto 0 auto;
-  background-color: rgb(18, 46, 68);
+  margin: 30vh auto 0 auto;
+  padding: 0;
+  background-color: $color_2;
   width: 80vw;
-  height: 80vh;
+  height: 50vh;
   border-radius: 5%;
 
+  @include desktop {
+    margin: 40vh auto 0 auto;
+    height: 60vw;
+  }
+
   .calculator {
-    padding: 5em;
+    padding: 3em;
     display: grid;
     justify-content: center;
-    top: 10%;
+    @include desktop {
+      padding: 5em;
+    }
   }
 
   .btn-pad {
@@ -75,31 +117,39 @@ nav {
     grid-template-columns: repeat(4, 6vw);
     grid-gap: 1em 1em;
     justify-items: center;
-    background-color: red;
-    padding: 1em;
+    background-color: $color_1;
+    padding: 3em;
+    border-radius: 10%;
 
     .btn {
       cursor: pointer;
+      border-radius: 8%;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      border: solid 1px rgb(230, 230, 230);
     }
 
     .elem {
       height: 5vw;
       width: 5vw;
-      background-color: white;
+      background-color: $color_2;
       font-family: $font1;
       font-size: 2vw;
       display: grid;
       justify-items: center;
       align-items: center;
-      color: black;
+      color: white;
     }
 
     #display {
       grid-column: 1/5;
       width: 90%;
-      display: grid;
-      grid-template-columns: repeat(20, 10px);
-      justify-items: start;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 1em;
+      background-color: rgb(76, 128, 100);
     }
 
     #clear {
